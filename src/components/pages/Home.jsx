@@ -8,9 +8,9 @@ export default function Home() {
     async function getHome(){
       const result = await axios({
         method: "get",
-        baseURL: "http://localhost:8080",
+        baseURL: `http://localhost:${process.env.REACT_APP_API_PORT}`,
         headers: {
-          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiS2VueW9uNiIsImlkIjoiNjMxMTQ2YmE5OGJiOGVkN2IyNTYzZmMxIiwiaWF0IjoxNjYyMTM5MDM4fQ.pgbrJqczAS3VLRwWi2ew_cy46rzzvh502GkXq2x_364` 
+          'Authorization': `Bearer ${process.env.REACT_APP_API_TOKEN_TEST}` 
         }
         
       })
