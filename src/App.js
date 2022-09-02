@@ -1,15 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home"
-import Tweets from "./pages/Tweets"
-// import AboutOurTwitter from "./pages/AboutOurTwitter";
-
+import Home from "./components/pages/Home";
 
 export const App = () => {
   return (
     <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/tweets/:id" element={<Tweets />} />
-        {/* <Route path="*" element={<Error404 />} />         */}
-      </Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 };
