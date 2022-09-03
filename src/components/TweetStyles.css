@@ -1,0 +1,46 @@
+.bodyPrueba {
+  background-color: black;
+  color: white;
+}
+
+.linkStyles {
+  color: white;
+  cursor: pointer;
+}
+.linkStyles:link,
+.linkStyles:visited {
+  text-decoration: inherit;
+  text-decoration: none;
+}
+
+.linkStyles:hover {
+  color: white;
+}
+
+.profileImage {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50px;
+}
+
+h6 {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.user {
+  color: #424853;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+.user:hover {
+  color: #181818;
+}
+.tweet-icons {
+  height: 12px;
+  width: 12px;
+}
+
+.pruebaIconsDiv {
+  background-color: black;
+}
