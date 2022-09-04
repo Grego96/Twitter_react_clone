@@ -1,0 +1,181 @@
+.search-container {
+  position: relative;
+  right: 60px;
+  min-width: 400px;
+  background-color: black;
+}
+
+.search-icon {
+  position: absolute;
+  top: 10px;
+  left: 65px;
+  margin: 15px;
+  width: 20px;
+  height: 30px;
+  background-color: #202327;
+}
+
+.search-input {
+  margin-left: 45px;
+  height: 45px;
+  width: 850px;
+  border-radius: 50px;
+  color: white;
+}
+
+.search-input:placeholder-shown {
+  background-color: #202327;
+  left: 60px;
+  color: white;
+  border: blue;
+}
+
+.search-input::placeholder {
+  color: #63686d;
+}
+
+textarea:focus,
+input:focus,
+input[type]:focus {
+  border-color: #1a8cd8;
+  border: 1px solid #1a8cd8;
+  outline: 0 none;
+}
+
+.trends-container {
+    position: relative;
+  background-color: black;
+  min-width: 325px;
+  padding: 10px 0 20px 15px;
+  background-color:#16181C;
+  border-radius: 17px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.trends-for-you {
+  font-size: 1.2rem;
+  font-family: arial;
+  font-weight: 800;
+  color: white;
+  background-color:#16181C;
+  border-radius: 17px;
+  width: 100%;
+}
+
+.trends-for-you-list {
+  background-color: #16181C;
+  cursor:pointer;
+  margin-bottom: 20px;
+  transition:all .3s;
+}
+
+.trends-for-you-list:hover {
+    background-color: #7f8184a3;
+}
+
+.trending-in {
+  font-size: 0.8rem;
+  background-color:#16181C;
+  color: #63686d;
+  margin: 0;
+}
+
+.trending-profile-name {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  background-color:#16181C;
+}
+
+.trending-profile-tweets {
+  font-size: 0.8rem;
+  background-color:#16181C;
+  color: #63686d;
+  margin: 0;
+}
+
+.three-dots-trends {
+    position: absolute;
+    right: 10px;
+    width: 35px;
+    background-color:#16181C;
+    border-radius: 50%;
+    padding: 5px;
+    transition: all .3s;
+}
+
+.three-dots-trends:hover {   
+    background-color: #21669153;    
+}
+
+.who-to-follow-container {
+  min-width: 325px;
+  padding-bottom: 15px;
+  background-color:#16181C;
+  border-radius: 17px;
+}
+
+.who-to-follow {
+  font-size: 1.2rem;
+  font-family: arial;
+  font-weight: 800;
+  color: white;
+  padding: 10px 0 10px 15px;
+  background-color: #16181C;
+  border-radius: 17px;
+  width: 100%;
+}
+
+.profile-container {
+  background-color:#16181C;
+}
+
+.profile-container img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 14px 20px 20px;
+}
+
+.profile-nick {
+  position: relative;
+  top: 3px;
+  color: white;
+  font-family: arial;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  background-color:#16181C;
+}
+
+.profile-nick:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.profile-name {
+  background-color:#16181C;
+  position: relative;
+  top: 28px;
+  left: -96px;
+  color: #63686d;
+  font-family: arial;
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+.follow-buton {
+  background-color: white;
+  position: relative;
+  top: 10px;
+  font-size: 0.9rem;
+  right: 40px;
+  height: 34px;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0px 18px;
+  border: 0.3px solid black;
+}

@@ -15,7 +15,7 @@ export default function LeftSidebar() {
     
       <div className="sidebar-container">
         <img className="twitter-icon" src={twitter_logo} alt="" />
-        <Link to="/" className="sidebar-left-links">
+        <Link to="/" className="sidebar-left-links home-sidebar">
           <img className="birdhouse" src={birdhouse} alt="" />
           Home
         </Link>
