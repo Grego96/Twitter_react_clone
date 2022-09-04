@@ -1,14 +1,14 @@
 .search-container {
   position: relative;
-  right: 60px;
-  min-width: 400px;
+
+  min-width: 100%;
   background-color: black;
 }
 
 .search-icon {
   position: absolute;
   top: 10px;
-  left: 65px;
+  /* left: 16px; */
   margin: 15px;
   width: 20px;
   height: 30px;
@@ -16,9 +16,9 @@
 }
 
 .search-input {
-  margin-left: 45px;
+  /* margin-left: 45px; */
   height: 45px;
-  width: 850px;
+  width: 100%;
   border-radius: 50px;
   color: white;
 }
@@ -43,11 +43,11 @@ input[type]:focus {
 }
 
 .trends-container {
-    position: relative;
+  position: relative;
   background-color: black;
-  min-width: 325px;
+  min-width: 100%;
   padding: 10px 0 20px 15px;
-  background-color:#16181C;
+  background-color: #16181c;
   border-radius: 17px;
   width: 100%;
   margin-bottom: 15px;
@@ -58,25 +58,25 @@ input[type]:focus {
   font-family: arial;
   font-weight: 800;
   color: white;
-  background-color:#16181C;
+  background-color: #16181c;
   border-radius: 17px;
   width: 100%;
 }
 
 .trends-for-you-list {
-  background-color: #16181C;
-  cursor:pointer;
+  background-color: #16181c;
+  cursor: pointer;
   margin-bottom: 20px;
-  transition:all .3s;
+  transition: all 0.3s;
 }
 
 .trends-for-you-list:hover {
-    background-color: #7f8184a3;
+  background-color: #7f8184a3;
 }
 
 .trending-in {
   font-size: 0.8rem;
-  background-color:#16181C;
+  background-color: #16181c;
   color: #63686d;
   margin: 0;
 }
@@ -86,34 +86,34 @@ input[type]:focus {
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
-  background-color:#16181C;
+  background-color: #16181c;
 }
 
 .trending-profile-tweets {
   font-size: 0.8rem;
-  background-color:#16181C;
+  background-color: #16181c;
   color: #63686d;
   margin: 0;
 }
 
 .three-dots-trends {
-    position: absolute;
-    right: 10px;
-    width: 35px;
-    background-color:#16181C;
-    border-radius: 50%;
-    padding: 5px;
-    transition: all .3s;
+  position: absolute;
+  right: 10px;
+  width: 35px;
+  background-color: #16181c;
+  border-radius: 50%;
+  padding: 5px;
+  transition: all 0.3s;
 }
 
-.three-dots-trends:hover {   
-    background-color: #21669153;    
+.three-dots-trends:hover {
+  background-color: #21669153;
 }
 
 .who-to-follow-container {
-  min-width: 325px;
+  min-width: 100%;
   padding-bottom: 15px;
-  background-color:#16181C;
+  background-color: #16181c;
   border-radius: 17px;
 }
 
@@ -123,13 +123,13 @@ input[type]:focus {
   font-weight: 800;
   color: white;
   padding: 10px 0 10px 15px;
-  background-color: #16181C;
+  background-color: #16181c;
   border-radius: 17px;
   width: 100%;
 }
 
 .profile-container {
-  background-color:#16181C;
+  background-color: #16181c;
 }
 
 .profile-container img {
@@ -148,7 +148,7 @@ input[type]:focus {
   font-weight: 800;
   font-size: 1rem;
   text-decoration: none;
-  background-color:#16181C;
+  background-color: #16181c;
 }
 
 .profile-nick:hover {
@@ -157,14 +157,15 @@ input[type]:focus {
 }
 
 .profile-name {
-  background-color:#16181C;
+  background-color: #16181c;
   position: relative;
   top: 28px;
-  left: -96px;
+  left: -83px;
   color: #63686d;
   font-family: arial;
   font-weight: 200;
   font-size: 0.9rem;
+  height: fit-content !important;
 }
 
 .follow-buton {
@@ -172,7 +173,7 @@ input[type]:focus {
   position: relative;
   top: 10px;
   font-size: 0.9rem;
-  right: 40px;
+  right: -15px;
   height: 34px;
   font-weight: 600;
   border-radius: 20px;

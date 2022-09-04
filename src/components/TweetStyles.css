@@ -3,6 +3,12 @@
   color: white;
 }
 
+.home {
+  font-size: 1.4rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
 .linkStyles {
   color: white;
   cursor: pointer;
@@ -18,8 +24,8 @@
 }
 
 .profileImage {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50px;
 }
 
@@ -39,8 +45,20 @@ h6 {
 .tweet-icons {
   height: 12px;
   width: 12px;
+  cursor: pointer;
 }
 
 .pruebaIconsDiv {
   background-color: black;
+}
+
+.horizontalLines {
+  width: 100%;
+  border-top: solid 0.2px #2f3336;
+  border-bottom: solid 0.2px #2f3336;
+  padding: 20px 0;
+}
+
+.separation {
+  padding: 0 15px;
 }

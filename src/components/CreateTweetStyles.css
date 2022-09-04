@@ -1,0 +1,42 @@
+.home {
+  margin-top: 20px;
+  padding: 0 16px;
+  color: white;
+}
+
+.profileImage {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50px;
+}
+
+.createTweetBox {
+  width: 100%;
+  margin-right: 15px;
+}
+
+#text {
+  background-color: black !important;
+  color: white !important;
+  border: none !important;
+  padding: 5px !important;
+}
+
+#text:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+}
+
+.tweet-btn {
+  background-color: #1a8cd8 !important;
+  color: white !important;
+  border-radius: 50px !important;
+  font-weight: bold !important;
+}
+.tweet-btn:hover,
+.tweet-btn:focus,
+.tweet-btn:focus-visible {
+  background-color: #1681c8 !important;
+  border: #1681c8 solid 1px !important;
+  color: rgb(239, 239, 239) !important;
+}

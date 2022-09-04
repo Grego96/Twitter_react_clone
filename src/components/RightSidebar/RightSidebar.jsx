@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import "./RightSidebar.css"
-import searchIcon from "./svg/searchIcon.svg"
-import profileWhoToFollow from "./img/profileWhoToFollow.jpg"
-import threeDots from "./svg/ThreeDots.svg"
+import "./RightSidebar.css";
+import searchIcon from "./svg/searchIcon.svg";
+import profileWhoToFollow from "./img/profileWhoToFollow.jpg";
+import threeDots from "./svg/ThreeDots.svg";
 
 export default function RightSidebar() {
   return (
-    <div>
-      <div className="d-flex p-3 search-container"><img className="search-icon" src={searchIcon} alt="" />
-        <input className="search-input" type="text" placeholder="           Buscar twitter"/>
+    <div className="px-4">
+      <div className="d-flex py-3 search-container">
+        <img className="search-icon" src={searchIcon} alt="" />
+        <input className="search-input" type="text" placeholder="           Buscar twitter" />
       </div>
       <div className="trends-container">
         <p className="trends-for-you">Trends for you</p>
@@ -47,8 +48,10 @@ export default function RightSidebar() {
         <p className="who-to-follow">Who to follow</p>
         <div className="d-flex profile-container">
           <img className="img-who-to-follow" src={profileWhoToFollow} alt="" />
-          <Link className="profile-nick" to="#">profileNick</Link>
-          <p className="profile-name">@profileName</p>
+          <Link className="profile-nick" to="#">
+            profileNick
+          </Link>
+          <span className="profile-name">@profileName</span>
           <button className="follow-buton">Follow</button>
         </div>
       </div>

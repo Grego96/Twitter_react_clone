@@ -1,0 +1,9 @@
+.parallelLines {
+  border-left: solid 0.2px #2f3336;
+  border-right: solid 0.2px #2f3336;
+}
+
+/* este bg-color es solo de prueba */
+.container {
+  background-color: black;
+}
