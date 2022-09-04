@@ -7,11 +7,14 @@ import LeftSidebar from "../LeftSidebar/LeftSidebar";
 import "./HomeStyles.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { storeUser } from "../../redux/userActions";
 
 export default function Home() {
   const [tweets, setTweets] = useState([]);
   const [userData, setUserData] = useState({});
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const token = useSelector((state) => state.token);
 
@@ -26,6 +29,7 @@ export default function Home() {
       });
       setTweets(result.data.tweets);
       setUserData(result.data.user);
+      dispatch(storeUser(result.data.user));
     } catch (error) {
       console.log(error);
       navigate("/login");

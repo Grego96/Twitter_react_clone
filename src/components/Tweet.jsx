@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -6,11 +6,12 @@ import retweet from "./TweetSVG/retweet-solid.svg";
 import comment from "./TweetSVG/comment-regular.svg";
 import share from "./TweetSVG/arrow-up-from-bracket-solid.svg";
 import heart from "./TweetSVG/heart-regular.svg";
-// import fullHeart from "./TweetSVG/heart-solid.svg";
+import fullHeart from "./TweetSVG/heart-solid.svg";
 import "./TweetStyles.css";
 
 function Tweet({ tweet }) {
   const token = useSelector((state) => state.token);
+  const [isLiked, setIsLiked] = useState(false)
 
   async function like(id) {
     await axios({
@@ -21,6 +22,16 @@ function Tweet({ tweet }) {
       },
     });
   }
+
+  // useEffect(() => {
+  //   const isLiked = tweet.likes.some((userId) => {
+  //     console.log(userId);
+  //     console.log(userData.id);
+  //    return userId === userData.id
+  //   })
+  //   console.log(isLiked);
+  //   setIsLiked(isLiked)
+  // },[])
 
   return (
     <div className="horizontalLines">
@@ -58,8 +69,10 @@ function Tweet({ tweet }) {
           <img src={retweet} alt="Retweet icon" className="tweet-icons" />
 
           <img
-            onClick={() => like(tweet._id)}
-            src={heart}
+            onClick={() => {
+              like(tweet._id)
+            }}
+            src={ isLiked ? fullHeart : heart }
             alt="Heart icon"
             className="tweet-icons"
           />
