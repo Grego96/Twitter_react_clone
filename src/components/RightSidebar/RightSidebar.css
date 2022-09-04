@@ -1,6 +1,5 @@
 .search-container {
   position: relative;
-
   min-width: 100%;
   background-color: black;
 }
@@ -43,13 +42,13 @@ input[type]:focus {
 }
 
 .trends-container {
-  position: relative;
+  display: flex;
+  flex-direction: column;  
+  width: 368px;
   background-color: black;
-  min-width: 100%;
-  padding: 10px 0 20px 15px;
+  padding: 10px 40px 20px 15px;
   background-color: #16181c;
-  border-radius: 17px;
-  width: 100%;
+  border-radius: 17px; 
   margin-bottom: 15px;
 }
 
@@ -64,14 +63,16 @@ input[type]:focus {
 }
 
 .trends-for-you-list {
+  display: flex;
+  flex-direction: column;
   background-color: #16181c;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   transition: all 0.3s;
 }
 
 .trends-for-you-list:hover {
-  background-color: #7f8184a3;
+  background-color: #7f8184a3 !important;
 }
 
 .trending-in {
@@ -97,9 +98,10 @@ input[type]:focus {
 }
 
 .three-dots-trends {
-  position: absolute;
-  right: 10px;
+  position: relative;
+  left: 300px;
   width: 35px;
+  top: 50px;
   background-color: #16181c;
   border-radius: 50%;
   padding: 5px;
@@ -107,14 +109,16 @@ input[type]:focus {
 }
 
 .three-dots-trends:hover {
-  background-color: #21669153;
+  background-color: #21669138;
 }
 
 .who-to-follow-container {
-  min-width: 100%;
+  position: absolute;
   padding-bottom: 15px;
   background-color: #16181c;
   border-radius: 17px;
+  width: 368px;
+  min-width: 335px;
 }
 
 .who-to-follow {
@@ -125,7 +129,6 @@ input[type]:focus {
   padding: 10px 0 10px 15px;
   background-color: #16181c;
   border-radius: 17px;
-  width: 100%;
 }
 
 .profile-container {
@@ -160,7 +163,7 @@ input[type]:focus {
   background-color: #16181c;
   position: relative;
   top: 28px;
-  left: -83px;
+  left: -97px;
   color: #63686d;
   font-family: arial;
   font-weight: 200;
@@ -169,11 +172,10 @@ input[type]:focus {
 }
 
 .follow-buton {
-  background-color: white;
   position: relative;
-  top: 10px;
+  right: 0px;
+  background-color: white;
   font-size: 0.9rem;
-  right: -15px;
   height: 34px;
   font-weight: 600;
   border-radius: 20px;
