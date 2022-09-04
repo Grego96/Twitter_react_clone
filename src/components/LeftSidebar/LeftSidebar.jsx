@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./left-sidebar.css";
 import birdhouse from "./svg/birdhouse.svg";
 import hashtag from "./svg/hashtag.svg";
 import bell from "./svg/bell.svg";
@@ -10,7 +9,12 @@ import threePoints from "./svg/threePoints.svg";
 import twitter_logo from "./svg/twitter_logo.svg";
 import bookmarks from "./svg/bookmarks_icon.svg";
 import listIcon from "./svg/listIicon.svg";
+import { useSelector } from "react-redux";
+import "./left-sidebar.css";
+
+
 export default function LeftSidebar() {
+  const user = useSelector((state) => state.user)
   return (
     <div className="sidebar-container">
       <Link to="/">
@@ -25,8 +29,8 @@ export default function LeftSidebar() {
         </div>
       </Link>
       <Link to="#" className="explore">
-        <span className="hashtag">          
-          <img className="birdhouse" src={hashtag} alt="" />
+        <span className="explore-icon">          
+          <img className="explore-icon" src={hashtag} alt="" />
           Explore
         </span>
       </Link>
@@ -54,7 +58,7 @@ export default function LeftSidebar() {
         Lists
         </span>
       </Link>
-      <Link to="#" className="profile">
+      <Link to={`/user/${user.value._id}`} className="profile">
         <span className="sidebar-left-links">
         <img className="profile-icon" src={profile} alt="" />
         Profile

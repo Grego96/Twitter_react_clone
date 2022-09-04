@@ -55,7 +55,7 @@ export default function Home() {
           <Tweets tweets={tweets} />
         </div>
         <div className="col-md-4">
-          <RightSidebar />
+          <RightSidebar updateTweets={updateTweets}/>
         </div>
       </div>
     </div>

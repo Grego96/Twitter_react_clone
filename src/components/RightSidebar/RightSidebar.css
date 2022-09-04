@@ -6,8 +6,7 @@
 
 .search-icon {
   position: absolute;
-  top: 10px;
-  /* left: 16px; */
+  top: 10px;  
   margin: 15px;
   width: 20px;
   height: 30px;
@@ -132,10 +131,13 @@ input[type]:focus {
 }
 
 .profile-container {
-  background-color: #16181c;
+  background-color: #16181c;  
+  position: relative;
 }
 
 .profile-container img {
+  position: relative;
+  left: -80px;
   width: 50px;
   height: 50px;
   object-fit: cover;
@@ -145,11 +147,12 @@ input[type]:focus {
 
 .profile-nick {
   position: relative;
-  top: 3px;
+  top: 6px;
+  right: 85px;
   color: white;
-  font-family: arial;
-  font-weight: 800;
-  font-size: 1rem;
+  font-family: helvetica;
+  font-weight: 600;
+  font-size: .9rem;
   text-decoration: none;
   background-color: #16181c;
 }
@@ -161,9 +164,9 @@ input[type]:focus {
 
 .profile-name {
   background-color: #16181c;
-  position: relative;
-  top: 28px;
-  left: -97px;
+  position: absolute;
+  top: 26px;
+  left: 79px;
   color: #63686d;
   font-family: arial;
   font-weight: 200;
@@ -173,7 +176,7 @@ input[type]:focus {
 
 .follow-buton {
   position: relative;
-  right: 0px;
+  left: 270px;
   background-color: white;
   font-size: 0.9rem;
   height: 34px;
