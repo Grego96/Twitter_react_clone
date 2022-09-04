@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import retweet from "./TweetSVG/retweet-solid.svg";
 import comment from "./TweetSVG/comment-regular.svg";
 import share from "./TweetSVG/arrow-up-from-bracket-solid.svg";
@@ -9,12 +10,14 @@ import heart from "./TweetSVG/heart-regular.svg";
 import "./TweetStyles.css";
 
 function Tweet({ tweet }) {
+  const token = useSelector((state) => state.token);
+
   async function like(id) {
     await axios({
       method: "PATCH",
       baseURL: `http://localhost:${process.env.REACT_APP_API_PORT}/tweets/${id}/like`,
       headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN_TEST}`,
+        Authorization: `Bearer ${token.value}`,
       },
     });
   }

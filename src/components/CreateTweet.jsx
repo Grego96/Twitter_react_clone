@@ -1,21 +1,30 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./CreateTweetStyles.css";
 
-function CreateTweet({ userData }) {
+function CreateTweet({ userData, updateTweets }) {
+
   const [tweet, setTweet] = useState("");
-  // console.log(tweet);
+  const token = useSelector((state) => state.token);
+  const navigate = useNavigate();
 
   const storeTweet = async function () {
-    await axios({
-      method: "POST",
-      basURL: `http://localhost:${process.env.REACT_APP_API_PORT}/tweets`,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN_TEST}`,
-      },
-      data: { text: tweet },
-    });
+    try {
+      const result = await axios({
+        method: "post",
+        baseURL: `http://localhost:${process.env.REACT_APP_API_PORT}/tweets`,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token.value}`,
+        },
+        data: { text: tweet },
+      });
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
   };
   // console.log(userData);
   return (
@@ -51,6 +60,7 @@ function CreateTweet({ userData }) {
               <button
                 onClick={() => {
                   storeTweet();
+                  updateTweets()
                 }}
                 className="btn my-4 tweet-btn d-flex "
                 type="button"

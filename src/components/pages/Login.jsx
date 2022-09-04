@@ -1,11 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { storeToken } from "../../redux/tokenActions";
 import "./login.css";
 
 function Login() {
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -17,21 +20,23 @@ function Login() {
   const [show3, setShow3] = useState(false);
   const handleClose3 = () => setShow3(false);
   const handleShow3 = () => setShow3(true);
-  
+
   const [firstName, setfirstName] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setpassword] = useState("");
-  
+
   const [userNameToLogin, setuserNameToLogin] = useState("");
   const [passwordToLogin, setpasswordLogin] = useState("");
 
   const [registerMessage, setregisterMessage] = useState("");
-  const [loginMessage, setloginMessage] = useState("")
+  const [loginMessage, setloginMessage] = useState("");
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (show === false || show2 === false ||  show3 === false){
+    if (show === false || show2 === false || show3 === false) {
       setregisterMessage("");
       setloginMessage("");
     }
@@ -75,10 +80,11 @@ function Login() {
           password: passwordToLogin,
         },
       });
-      console.log(result);
+      dispatch(storeToken(result.data.token));
+      navigate("/");
     } catch (error) {
       console.log(error);
-      setloginMessage(error.response.data)
+      setloginMessage(error.response.data);
     }
   }
 
@@ -206,7 +212,7 @@ function Login() {
         </div>
       </div>
 
-      <form action="/login" method="post">
+      <form>
         <Modal show={show} onHide={handleClose} centered className="modal-1">
           <Modal.Body className="modal-body-1">
             <div>
@@ -237,7 +243,7 @@ function Login() {
                       <div className="div-modal-title">
                         <h4 className="modal-title">Inicia sesión en Twitter</h4>
                       </div>
-                      <button className="register register_google">
+                      <button className="register register_google register-modal">
                         <span className="google-icon">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -267,7 +273,7 @@ function Login() {
                         </span>
                         Continuar con Google
                       </button>
-                      <button className="register register_apple register_apple-modal-1">
+                      <button className="register register_apple register_apple-modal-1 register-modal">
                         <span>
                           <svg
                             className="apple-icon"
@@ -303,13 +309,13 @@ function Login() {
                             handleShow2();
                             handleClose();
                           }}
-                          className="button-prevent register siguiente-btn "
+                          className="button-prevent register siguiente-btn register-modal"
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal2"
                         >
                           Siguiente
                         </button>
-                        <button className="button-prevent register olvidaste-btn">
+                        <button className="button-prevent register olvidaste-btn register-modal">
                           ¿Olvidaste tu contraseña?
                         </button>
                         <p>
@@ -362,7 +368,7 @@ function Login() {
                   <div className="login-login-message">
                     <p>{loginMessage.message}</p>
                   </div>
-                  <button className="register register_google">
+                  <button className="register register_google register-modal">
                     <span className="google-icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -392,7 +398,7 @@ function Login() {
                     </span>
                     Continuar con Google
                   </button>
-                  <button className="register register_apple">
+                  <button className="register register_apple register-modal">
                     <span>
                       <svg
                         className="apple-icon"
@@ -424,10 +430,14 @@ function Login() {
                       placeholder="Ingresar contraseña"
                       onChange={(e) => setpasswordLogin(e.target.value)}
                     />
-                    <button type="submit" className="register siguiente-btn" onClick={() => login()}>
+                    <button
+                      type="submit"
+                      className="register siguiente-btn register-modal"
+                      onClick={() => login()}
+                    >
                       Iniciar sesión
                     </button>
-                    <button className="button-prevent register olvidaste-btn">
+                    <button className="button-prevent register olvidaste-btn register-modal">
                       ¿Olvidaste tu contraseña?
                     </button>
                     <p>

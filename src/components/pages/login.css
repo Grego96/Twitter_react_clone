@@ -16,11 +16,15 @@
 footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 20px;
+  /* justify-content: space-evenly; */
+  padding: 5px;
   min-height: 8vh;
   background-color: rgb(0, 0, 0);
   color: white;
+}
+.item-footer {
+  font-size: 0.9rem;
+  margin: 0 10px;
 }
 
 .bg-img {
@@ -36,25 +40,27 @@ footer {
 .login-info {
   height: 100%;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   padding: 0 5%;
   color: white;
 }
 
 .main-title {
-  font-size: 6rem;
+  font-size: 3.7rem;
   font-weight: bolder;
   letter-spacing: -1.2px;
 }
 
 .subtitle {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-top: 30px;
 }
 .register_buttons {
   margin-top: 8px;
-  padding: 1.5rem 0;
+  padding: 0.5rem 0;
   font-weight: 800;
-  max-width: 475px;
+  max-width: 375px;
 }
 
 .register_google {
@@ -65,11 +71,11 @@ footer {
 
 .register {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   background-color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  padding: 12px 0px;
+  font-size: 0.9rem;
+  padding: 3px 0px;
   border: 1px solid rgb(187, 187, 187);
   border-radius: 25px;
   text-decoration: none;
@@ -93,25 +99,24 @@ footer {
 
 .new-register {
   background-color: #1a8cd8;
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 1.4px;
   font-weight: bolder;
   color: white;
   border: 0.1px solid white;
-  padding: 10px;
-  margin-top: 15px;
-  /* width: 400px; */
+  padding: 7px;
+  margin-top: 7px;
 }
 
 .register_buttons .o {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .termins {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 200;
 }
 
@@ -149,27 +154,23 @@ footer {
 }
 
 .new-sesion {
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 1.4px;
   font-weight: bolder;
   color: white;
   border: 0.1px solid white;
   padding: 10px;
   margin-top: 15px;
-  max-width: 475px;
+  max-width: 375px;
   background-color: black;
 }
 
 .iniciar-sesion {
-  margin: 10% 0;
+  margin: 5% 0;
 }
 
 .modal-dialog {
-  text-align: center;
-  display: flex;
-  justify-content: center;
   height: 100vh;
-  width: 100vw;
 }
 
 .modal-content {
@@ -177,39 +178,26 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 800px;
+  height: 730px;
 }
 
 .modal-body {
   border-radius: 15px;
   background-color: #000000;
   /* padding: 0 !important; */
-  width: 800px;
+  width: 700px;
 }
 
 .elements {
   height: 100%;
-  margin-bottom: 300px;
 }
 
 .botones_modal {
   height: 100%;
 }
 
-.div-modal-title {
-  margin-bottom: 40px;
-}
-
 .modal-title {
   font-size: 3rem;
-}
-
-.register_apple-modal-1 {
-  margin-top: 20px;
-}
-
-.container-o-modal-1 {
-  margin-top: 20px;
 }
 
 .o-modal {
@@ -223,11 +211,9 @@ footer {
   margin-top: 20px;
 }
 
-
-
-
-
-
+.register-modal {
+  padding: 10px;
+}
 
 .contenido-modal {
   color: white;
