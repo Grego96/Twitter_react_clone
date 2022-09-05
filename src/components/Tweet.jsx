@@ -7,6 +7,7 @@ import comment from "./TweetSVG/comment-regular.svg";
 import share from "./TweetSVG/arrow-up-from-bracket-solid.svg";
 import heart from "./TweetSVG/heart-regular.svg";
 import fullHeart from "./TweetSVG/heart-solid.svg";
+import profileDefaultImg from "../a0e243b3a508306970f49bc00.jpg"
 import "./TweetStyles.css";
 
 function Tweet({ tweet }) {
@@ -44,17 +45,17 @@ function Tweet({ tweet }) {
       <div className="separation">
         <div className="d-flex  w-100 bodyPrueba">
           <div className="px-1 tweetRectangle">
-            {/* {tweet.user.profileImage.includes("http") ? (
+            {tweet.user.profileImage.includes("http") ? (
               <img src={tweet.user.profileImage} className="profileImage" alt="Profile" />
             ) : (
               <img
-                src={`./img/${tweet.user.profileImage}`}
+                src={profileDefaultImg}
                 className="profileImage"
                 alt="Profile"
               />
-            )} */}
+            )}
 
-            <img src={tweet.user.profileImage} className="profileImage" alt="Profile" />
+            {/* <img src={tweet.user.profileImage} className="profileImage" alt="Profile" /> */}
           </div>
           <div className="px-1 w-100">
             <div>

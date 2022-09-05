@@ -2,12 +2,24 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import profileDefaultImg from "../a0e243b3a508306970f49bc00.jpg";
 import "./CreateTweetStyles.css";
 
-function CreateTweet({ userData, updateTweets }) {
+function CreateTweet({ updateTweets }) {
   const [tweet, setTweet] = useState("");
+  const [tweetMessage, setTweetMessage] = useState("");
+  const [profileImg, setprofileImg] = useState("");
   const token = useSelector((state) => state.token);
   const navigate = useNavigate();
+
+  const userData = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (userData.value.profileImage) {
+      setprofileImg(userData.value.profileImage);
+    }
+  }, [userData]);
 
   const storeTweet = async function () {
     try {
@@ -21,24 +33,23 @@ function CreateTweet({ userData, updateTweets }) {
         data: { text: tweet },
       });
       console.log(result);
+      setTweetMessage("");
     } catch (error) {
+      setTweetMessage(error.response.data.message);
       console.log(error);
     }
   };
-  // console.log(userData);
   return (
     <>
       <h2 className="home">Home</h2>
       <div className="separation">
         <div className="d-flex">
           <div className="px-1">
-            {/* {userData.profileImage.includes("http") ? (
-            <img src={userData.profileImage} className="profileImage" alt="Profile" />
-          ) : (
-            <img src={`./img/${userData.profileImage}`} className="profileImage" alt="Profile" />
-          )} */}
-
-            <img src={userData.profileImage} className="profileImage" alt="Profile" />
+            {profileImg.includes("http") ? (
+              <img src={userData.value.profileImage} className="profileImage" alt="Profile" />
+            ) : (
+              <img src={profileDefaultImg} className="profileImage" alt="Profile" />
+            )}
           </div>
           <div className="createTweetBox">
             <div className="form-group">
@@ -55,7 +66,8 @@ function CreateTweet({ userData, updateTweets }) {
               ></textarea>
             </div>
 
-            <div className="d-flex justify-content-end">
+            <div className="d-flex align-items-center justify-content-end">
+              <p className="px-5 my-1 tweet-message">{tweetMessage}</p>
               <button
                 onClick={() => {
                   storeTweet();
