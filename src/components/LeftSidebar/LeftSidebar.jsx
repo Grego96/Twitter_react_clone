@@ -59,7 +59,7 @@ export default function LeftSidebar() {
         Lists
         </span>
       </Link>
-      <Link to={`/users/${user.value._id}`} className="profile">
+      <Link to={`/profile/${user.value._id}`} className="profile">
         <span className="sidebar-left-links">
         <img className="profile-icon" src={profile} alt="" />
         Profile

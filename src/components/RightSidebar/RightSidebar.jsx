@@ -26,7 +26,6 @@ export default function RightSidebar() {
           number: 5,
         },
       });
-      console.log(result.data.randomsUnfollowers);
       setRandomUsers(result.data.randomsUnfollowers);
     } catch (error) {
       console.log(error);
