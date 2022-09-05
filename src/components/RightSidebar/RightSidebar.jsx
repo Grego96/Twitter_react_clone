@@ -8,6 +8,7 @@ import threeDots from "./svg/ThreeDots.svg";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import WhoToFollowCard from "../WhoToFollowCard";
 
 export default function RightSidebar() {
   const token = useSelector((state) => state.token);
@@ -35,20 +36,6 @@ export default function RightSidebar() {
   useEffect(() => {
     randomsUnfollowers();
   }, []);
-
-  async function follow(id) {
-    try {
-      const result = await axios({
-        method: "patch",
-        baseURL: `http://localhost:${process.env.REACT_APP_API_PORT}/users/${id}/follow`,
-        headers: {
-          Authorization: `Bearer ${token.value}`,
-        }
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
 
   return (
@@ -94,16 +81,8 @@ export default function RightSidebar() {
         <p className="who-to-follow">Who to follow</p>
         {randomUsers.map((randomUser) => {
           return (
-            <div className="d-flex profile-container">
-              <button className="follow-buton" onClick={() => {
-                follow(randomUser._id)
-                }}>Follow</button>
-              <img className="img-who-to-follow" src={randomUser.profileImage} alt="" />
-              <Link className="profile-nick" to="#">
-                {randomUser.username}
-              </Link>
-              <span className="profile-name">@{randomUser.username }</span>
-            </div>
+            <WhoToFollowCard randomUser={randomUser}/>
+            
           );
         })}
       </div>
