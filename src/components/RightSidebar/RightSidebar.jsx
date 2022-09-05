@@ -56,7 +56,7 @@ export default function RightSidebar() {
           <img className="three-dots-trends" src={threeDots} alt="" />
           <p className="trending-in">Trending in Uruguay</p>
           <p className="trending-profile-name">Alina Gabriels</p>
-          <p className="trending-profile-tweets">15605 Tweets</p>
+          <p className="trending-profile-tweets">15.6k Tweets</p>
         </div>
         <div className="trends-for-you-list">
           <img className="three-dots-trends" src={threeDots} alt="" />
@@ -74,7 +74,7 @@ export default function RightSidebar() {
           <img className="three-dots-trends" src={threeDots} alt="" />
           <p className="trending-in">Trending in Uruguay</p>
           <p className="trending-profile-name">Igor Carcarof</p>
-          <p className="trending-profile-tweets">35900 Tweets</p>
+          <p className="trending-profile-tweets">35.9k Tweets</p>
         </div>
         <div className="trends-for-you-list">
           <img className="three-dots-trends" src={threeDots} alt="" />
@@ -98,13 +98,13 @@ export default function RightSidebar() {
           <img className="three-dots-trends" src={threeDots} alt="" />
           <p className="trending-in">Trending in Uruguay</p>
           <p className="trending-profile-name">Esteban Cassiani</p>
-          <p className="trending-profile-tweets">21.9 Tweets</p>
+          <p className="trending-profile-tweets">21.9k Tweets</p>
         </div>
         <div className="trends-for-you-list">
           <img className="three-dots-trends" src={threeDots} alt="" />
           <p className="trending-in">Trending in Uruguay</p>
           <p className="trending-profile-name">Alice Keys</p>
-          <p className="trending-profile-tweets">35.8kTweets</p>
+          <p className="trending-profile-tweets">35.8k Tweets</p>
         </div>
           <div className="show-more-trends-container">
           <Link to="#" className="show-more-trends">Show more</Link>

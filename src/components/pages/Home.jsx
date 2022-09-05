@@ -48,14 +48,14 @@ export default function Home() {
     <div className="container">
       <div className="row">
         <div className="col-md-3">
-          <LeftSidebar />
+          <LeftSidebar userData={ userData }/>
         </div>
         <div className="col-md-5 px-0 parallelLines">
           <CreateTweet userData={userData} updateTweets={updateTweets} />
           <Tweets tweets={tweets} />
         </div>
         <div className="col-md-4">
-          <RightSidebar updateTweets={updateTweets}/>
+          <RightSidebar />
         </div>
       </div>
     </div>

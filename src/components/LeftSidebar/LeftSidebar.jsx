@@ -9,12 +9,13 @@ import threePoints from "./svg/threePoints.svg";
 import twitter_logo from "./svg/twitter_logo.svg";
 import bookmarks from "./svg/bookmarks_icon.svg";
 import listIcon from "./svg/listIicon.svg";
+import threeDots from "./svg/ThreeDots.svg";
 import { useSelector } from "react-redux";
+import { deleteToken } from "../../redux/tokenActions"
 import "./left-sidebar.css";
 
-
-export default function LeftSidebar() {
-  const user = useSelector((state) => state.user)
+export default function LeftSidebar({ userData }) {
+  const user = useSelector((state) => state.user);
 
   return (
     <div className="sidebar-container">
@@ -23,55 +24,65 @@ export default function LeftSidebar() {
       </Link>
       <Link to="/" className="home-sidebar">
         <div>
-        <span >
-          <div>
-          <img className="birdhouse" src={birdhouse} alt="" /><sup className="birdhouse-dot">·</sup>Home</div>          
-        </span>
+          <span>
+            <div>
+              <img className="birdhouse" src={birdhouse} alt="" />
+              <sup className="birdhouse-dot">·</sup>Home
+            </div>
+          </span>
         </div>
       </Link>
       <Link to="#" className="explore">
-        <span className="explore-icon">          
+        <span className="explore-icon">
           <img className="explore-icon" src={hashtag} alt="" />
           Explore
         </span>
       </Link>
       <Link to="#" className="sidebar-left-links-notification">
-        <span ><div className="">
-          <img className="bell" src={bell} alt="" /><sup className="notifications-count">5</sup>Notifications
-          </div>      
+        <span>
+          <div className="">
+            <img className="bell" src={bell} alt="" />
+            <sup className="notifications-count">5</sup>Notifications
+          </div>
         </span>
       </Link>
-      <Link to="#"  className="messages">
-        <span  className=" sidebar-left-links">
+      <Link to="#" className="messages">
+        <span className=" sidebar-left-links">
           <img className="messages-icon" src={message} alt="" />
           Messages
         </span>
       </Link>
       <Link to="#" className=" bookmarks">
         <span className="sidebar-left-links">
-        <img className="bookmarks-icon" src={bookmarks} alt="" />
-        Bookmarks
+          <img className="bookmarks-icon" src={bookmarks} alt="" />
+          Bookmarks
         </span>
       </Link>
       <Link to="#" className="list">
         <span className="sidebar-left-links">
-        <img className="list-icon" src={listIcon} alt="" />
-        Lists
+          <img className="list-icon" src={listIcon} alt="" />
+          Lists
         </span>
       </Link>
-      <Link to={`/users/${user.value._id}`} className="profile">
+      <Link to={`/profile/${user.value._id}`} className="profile">
         <span className="sidebar-left-links">
-        <img className="profile-icon" src={profile} alt="" />
-        Profile
+          <img className="profile-icon" src={profile} alt="" />
+          Profile
         </span>
       </Link>
       <Link to="#" className="more">
         <span className="sidebar-left-links">
-        <img className="more-icon" src={threePoints} alt="" />
-        More
+          <img className="more-icon" src={threePoints} alt="" />
+          More
         </span>
       </Link>
       <button className="btn-tweet">Tweet</button>
+      <div className="logout">       
+        <img className="profile-icon-logout" src={user.value.profileImage} alt="" />       
+        <button className="logoutBtn">{user.value.username}</button>
+        <img className="three-dots-logout" src={threeDots} alt="" />
+        <p className="logoutNick">@{user.value.username}</p>
+      </div>
     </div>
   );
 }

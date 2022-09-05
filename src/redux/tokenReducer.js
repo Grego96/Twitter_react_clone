@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { storeToken } from "./tokenActions";
+import { storeToken, deleteToken } from "./tokenActions";
 
 const initialState = { value: "" };
 
