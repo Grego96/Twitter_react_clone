@@ -137,7 +137,7 @@ input[type]:focus {
 
 .profile-container img {
   position: relative;
-  left: -80px;
+  left: 0px;
   width: 50px;
   height: 50px;
   object-fit: cover;
@@ -145,10 +145,19 @@ input[type]:focus {
   margin: 0 14px 20px 20px;
 }
 
+.who-to-follow-img-container {
+  position: relatives;
+left: 10px;
+}
+
+.img-who-to-follow {
+  position: absolute;
+}
+
 .profile-nick {
   position: relative;
   top: 6px;
-  right: 85px;
+  right: 0px;
   color: white;
   font-family: helvetica;
   font-weight: 600;
@@ -175,7 +184,7 @@ input[type]:focus {
 }
 
 .follow-buton {
-  position: relative;
+  position: absolute;
   left: 270px;
   background-color: white;
   font-size: 0.9rem;

@@ -25,6 +25,7 @@ export default function WhoToFollowCard({ randomUser }) {
   }
   return (
     <div className="d-flex profile-container">
+      <div>
       <button
         className="follow-buton"
         onClick={() => {
@@ -34,7 +35,10 @@ export default function WhoToFollowCard({ randomUser }) {
       >
         { ifFollow ? "Unfollow" : "Follow" }
       </button>
+      </div>
+      <div className="who-to-follow-img-container">
       <img className="img-who-to-follow" src={randomUser.profileImage} alt="" />
+      </div>
       <Link className="profile-nick" to="#">
         {randomUser.username}
       </Link>
