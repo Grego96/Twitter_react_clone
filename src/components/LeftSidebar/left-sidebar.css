@@ -253,3 +253,9 @@ left: -13px;
 top: 7px;
 position: relative;
 }
+
+
+.modal-container {
+  width: 100px;
+  height: 100px;
+}

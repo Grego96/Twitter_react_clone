@@ -1,8 +1,9 @@
 .general-container {
-  width: 368px;
+  width: 368px;  
 }
 
 .search-container {
+  position: sticky;
   position: relative;
   min-width: 100%;
   background-color: black;

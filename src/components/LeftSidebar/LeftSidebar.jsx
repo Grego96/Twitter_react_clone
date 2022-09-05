@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import birdhouse from "./svg/birdhouse.svg";
 import hashtag from "./svg/hashtag.svg";
@@ -10,15 +12,19 @@ import twitter_logo from "./svg/twitter_logo.svg";
 import bookmarks from "./svg/bookmarks_icon.svg";
 import listIcon from "./svg/listIicon.svg";
 import threeDots from "./svg/ThreeDots.svg";
-import { useSelector } from "react-redux";
 import { deleteToken } from "../../redux/tokenActions";
 import profileDefaultImg from "../../a0e243b3a508306970f49bc00.jpg";
-import { useEffect, useState } from "react";
+import { Modal } from "react-bootstrap";
 import "./left-sidebar.css";
 
 export default function LeftSidebar({ userData }) {
   const [profileImg, setprofileImg] = useState("");
   const user = useSelector((state) => state.user);
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (user.value.profileImage) {
@@ -29,64 +35,64 @@ export default function LeftSidebar({ userData }) {
   return (
     <div className="sidebar-container">
       <div className="d-flex flex-column">
-      <Link to="/">
-        <img className="twitter-icon" src={twitter_logo} alt="" />
-      </Link>
-      <Link to="/" className="home-sidebar">
-        <div>
+        <Link to="/">
+          <img className="twitter-icon" src={twitter_logo} alt="" />
+        </Link>
+        <Link to="/" className="home-sidebar">
+          <div>
+            <span>
+              <div>
+                <img className="birdhouse" src={birdhouse} alt="" />
+                <sup className="birdhouse-dot">·</sup>Home
+              </div>
+            </span>
+          </div>
+        </Link>
+        <Link to="#" className="explore">
+          <span className="explore-icon">
+            <img className="explore-icon" src={hashtag} alt="" />
+            Explore
+          </span>
+        </Link>
+        <Link to="#" className="sidebar-left-links-notification">
           <span>
-            <div>
-              <img className="birdhouse" src={birdhouse} alt="" />
-              <sup className="birdhouse-dot">·</sup>Home
+            <div className="">
+              <img className="bell" src={bell} alt="" />
+              <sup className="notifications-count">5</sup>Notifications
             </div>
           </span>
-        </div>
-      </Link>
-      <Link to="#" className="explore">
-        <span className="explore-icon">
-          <img className="explore-icon" src={hashtag} alt="" />
-          Explore
-        </span>
-      </Link>
-      <Link to="#" className="sidebar-left-links-notification">
-        <span>
-          <div className="">
-            <img className="bell" src={bell} alt="" />
-            <sup className="notifications-count">5</sup>Notifications
-          </div>
-        </span>
-      </Link>
-      <Link to="#" className="messages">
-        <span className=" sidebar-left-links">
-          <img className="messages-icon" src={message} alt="" />
-          Messages
-        </span>
-      </Link>
-      <Link to="#" className=" bookmarks">
-        <span className="sidebar-left-links">
-          <img className="bookmarks-icon" src={bookmarks} alt="" />
-          Bookmarks
-        </span>
-      </Link>
-      <Link to="#" className="list">
-        <span className="sidebar-left-links">
-          <img className="list-icon" src={listIcon} alt="" />
-          Lists
-        </span>
-      </Link>
-      <Link to={`/profile/${user.value._id}`} className="profile">
-        <span className="sidebar-left-links">
-          <img className="profile-icon" src={profile} alt="" />
-          Profile
-        </span>
-      </Link>
-      <Link to="#" className="more">
-        <span className="sidebar-left-links">
-          <img className="more-icon" src={threePoints} alt="" />
-          More
-        </span>
-      </Link>
-      <button className="btn-tweet">Tweet</button>
+        </Link>
+        <Link to="#" className="messages">
+          <span className=" sidebar-left-links">
+            <img className="messages-icon" src={message} alt="" />
+            Messages
+          </span>
+        </Link>
+        <Link to="#" className=" bookmarks">
+          <span className="sidebar-left-links">
+            <img className="bookmarks-icon" src={bookmarks} alt="" />
+            Bookmarks
+          </span>
+        </Link>
+        <Link to="#" className="list">
+          <span className="sidebar-left-links">
+            <img className="list-icon" src={listIcon} alt="" />
+            Lists
+          </span>
+        </Link>
+        <Link to={`/profile/${user.value._id}`} className="profile">
+          <span className="sidebar-left-links">
+            <img className="profile-icon" src={profile} alt="" />
+            Profile
+          </span>
+        </Link>
+        <Link to="#" className="more">
+          <span className="sidebar-left-links">
+            <img className="more-icon" src={threePoints} alt="" />
+            More
+          </span>
+        </Link>
+        <button className="btn-tweet">Tweet</button>
       </div>
       <div className="logout">
         {profileImg.includes("http") ? (
@@ -94,9 +100,28 @@ export default function LeftSidebar({ userData }) {
         ) : (
           <img src={profileDefaultImg} className="profileImageSidebar" alt="Profile" />
         )}
-        <button className="logoutBtn">{user.value.username}</button>
+        <button
+          onClick={() => {
+            setShow(true);
+          }}
+          className="logoutBtn"
+        >
+          {user.value.username}
+        </button>
         <img className="three-dots-logout" src={threeDots} alt="" />
         <p className="logoutNick">@{user.value.username}</p>
+        <Modal className="modal-container" show={show} onHide={handleClose}>
+          <Modal.Header>{user.value.username}</Modal.Header>
+          <Modal.Body>
+            <button
+              onClick={() => {
+                dispatch(deleteToken());
+              }}
+            >
+              <Link to="/login">Log out</Link>{" "}
+            </button>
+          </Modal.Body>
+        </Modal>
       </div>
     </div>
   );
