@@ -11,11 +11,20 @@ import bookmarks from "./svg/bookmarks_icon.svg";
 import listIcon from "./svg/listIicon.svg";
 import threeDots from "./svg/ThreeDots.svg";
 import { useSelector } from "react-redux";
-import { deleteToken } from "../../redux/tokenActions"
+import { deleteToken } from "../../redux/tokenActions";
+import profileDefaultImg from "../../a0e243b3a508306970f49bc00.jpg";
+import { useEffect, useState } from "react";
 import "./left-sidebar.css";
 
 export default function LeftSidebar({ userData }) {
+  const [profileImg, setprofileImg] = useState("");
   const user = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (user.value.profileImage) {
+      setprofileImg(user.value.profileImage);
+    }
+  }, [user]);
 
   return (
     <div className="sidebar-container">
@@ -77,8 +86,12 @@ export default function LeftSidebar({ userData }) {
         </span>
       </Link>
       <button className="btn-tweet">Tweet</button>
-      <div className="logout">       
-        <img className="profile-icon-logout" src={user.value.profileImage} alt="" />       
+      <div className="logout">
+        {profileImg.includes("http") ? (
+          <img src={user.value.profileImage} className="profileImage" alt="Profile" />
+        ) : (
+          <img src={profileDefaultImg} className="profileImage" alt="Profile" />
+        )}
         <button className="logoutBtn">{user.value.username}</button>
         <img className="three-dots-logout" src={threeDots} alt="" />
         <p className="logoutNick">@{user.value.username}</p>
