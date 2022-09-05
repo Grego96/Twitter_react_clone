@@ -13,7 +13,6 @@ function Profile() {
   const params = useParams();
 
   const token = useSelector((state) => state.token);
-  // console.log(params.id);
 
   useEffect(() => {
     const getProfile = async function () {
@@ -26,14 +25,13 @@ function Profile() {
           },
         });
         setUser(result.data.userProfileData);
+        console.log(result);
       } catch (error) {
         console.log(error);
       }
     };
     getProfile();
   }, []);
-
-  console.log(user);
 
   return (
     <div className="container">
@@ -50,7 +48,9 @@ function Profile() {
             </Link>
             <div className="mb-2">
               <h4>{user.firstname + " " + user.lastname} </h4>
-              <h6 className="usr"> {user.tweets.length} Tweets </h6>
+              <h6 className="usr"> 
+              {/* {user.tweets.length} */}
+               Tweets </h6>
             </div>
           </div>
 
@@ -81,12 +81,12 @@ function Profile() {
             <div>
               <h6>
                 <span>
-                  {user.followings.length}
+                  {/* {user.followings.length} */}
                   <text className="usr"> Followings </text>
                 </span>
 
                 <span className="followersSpan">
-                  {user.followers.length}
+                  {/* {user.followers.length} */}
                   <text className="usr"> Followers </text>
                 </span>
               </h6>
