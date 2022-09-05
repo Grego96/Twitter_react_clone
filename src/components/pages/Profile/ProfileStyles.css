@@ -1,0 +1,94 @@
+.profileContainer {
+  color: white;
+}
+.backArrow {
+  height: 15px;
+  width: 15px;
+}
+
+.profileUser {
+  padding: 20px 0 0;
+}
+
+.headerPic {
+  width: 100%;
+  /* background-color: #16181c; */
+  background-image: url(./img/tech.jpeg);
+  height: 250px;
+  margin: 0;
+}
+
+.userProfileImage {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 100px;
+  margin: 10px;
+  position: relative;
+  bottom: 90px;
+  border: solid black 4px;
+}
+
+.edit-btn {
+  font-size: 0.8rem;
+  border: solid white 0.5px;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  font-weight: bold;
+  padding: 6px 15px;
+  position: relative;
+  bottom: 154px;
+  left: 435px;
+}
+
+.usr {
+  color: #424853;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.userInfo {
+  margin: 0 10px;
+}
+
+.born {
+  color: #424853;
+  font-size: 0.8rem;
+  margin: 5px 0;
+}
+
+ul {
+  list-style: none;
+}
+.profileList {
+  margin-top: 10px;
+  width: max-content;
+  padding: 15px 20px 10px;
+  color: #424853;
+}
+
+.profileList:hover {
+  color: white;
+  background-color: rgb(56, 56, 56);
+  color: #424853;
+}
+
+.underline span {
+  display: inline-block;
+  color: white;
+}
+
+.underline span:after {
+  content: "";
+  height: 5px;
+  background: #1a8cd8;
+  border-radius: 5px;
+  display: block;
+  position: relative;
+  bottom: -10px;
+}
+
+.followersSpan {
+  position: relative;
+  left: 10px;
+}

@@ -44,7 +44,7 @@ function Tweet({ tweet }) {
       <div className="separation">
         <div className="d-flex  w-100 bodyPrueba">
           <div className="px-1 tweetRectangle">
-            {tweet.user.profileImage.includes("http") ? (
+            {/* {tweet.user.profileImage.includes("http") ? (
               <img src={tweet.user.profileImage} className="profileImage" alt="Profile" />
             ) : (
               <img
@@ -52,7 +52,9 @@ function Tweet({ tweet }) {
                 className="profileImage"
                 alt="Profile"
               />
-            )}
+            )} */}
+
+            <img src={tweet.user.profileImage} className="profileImage" alt="Profile" />
           </div>
           <div className="px-1 w-100">
             <div>

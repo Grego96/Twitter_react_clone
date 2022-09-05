@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import "./CreateTweetStyles.css";
 
 function CreateTweet({ userData, updateTweets }) {
-
   const [tweet, setTweet] = useState("");
   const token = useSelector((state) => state.token);
   const navigate = useNavigate();
@@ -29,7 +28,7 @@ function CreateTweet({ userData, updateTweets }) {
   // console.log(userData);
   return (
     <>
-      <h2 className="home">Inicio</h2>
+      <h2 className="home">Home</h2>
       <div className="separation">
         <div className="d-flex">
           <div className="px-1">
@@ -52,7 +51,7 @@ function CreateTweet({ userData, updateTweets }) {
                 name="text"
                 rows="5"
                 maxLength="140"
-                placeholder="Qué está pasando?"
+                placeholder="What's happening?"
               ></textarea>
             </div>
 
@@ -60,7 +59,7 @@ function CreateTweet({ userData, updateTweets }) {
               <button
                 onClick={() => {
                   storeTweet();
-                  updateTweets()
+                  updateTweets();
                 }}
                 className="btn my-4 tweet-btn d-flex "
                 type="button"
