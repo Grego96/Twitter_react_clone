@@ -39,10 +39,10 @@ export default function RightSidebar() {
 
 
   return (
-    <div className="px-4">
+    <div className="general-container">
       <div className="d-flex py-3 search-container">
         <img className="search-icon" src={searchIcon} alt="" />
-        <input className="search-input" disable type="text" placeholder="           Search Twitter" />
+        <input className="search-input" disabled type="text" placeholder="           Search Twitter" />
       </div>
       <div className="trends-container">
         <p className="trends-for-you">Trends for you</p>
@@ -76,6 +76,39 @@ export default function RightSidebar() {
           <p className="trending-profile-name">Igor Carcarof</p>
           <p className="trending-profile-tweets">35900 Tweets</p>
         </div>
+        <div className="trends-for-you-list">
+          <img className="three-dots-trends" src={threeDots} alt="" />
+          <p className="trending-in">Trending in Uruguay</p>
+          <p className="trending-profile-name">Eliana Mauregui</p>
+          <p className="trending-profile-tweets">6300 Tweets</p>
+        </div>
+        <div className="trends-for-you-list">
+          <img className="three-dots-trends" src={threeDots} alt="" />
+          <p className="trending-in">Trending in Uruguay</p>
+          <p className="trending-profile-name">Carmen Barbieri</p>
+          <p className="trending-profile-tweets">3950 Tweets</p>
+        </div>
+        <div className="trends-for-you-list">
+          <img className="three-dots-trends" src={threeDots} alt="" />
+          <p className="trending-in">Trending in Uruguay</p>
+          <p className="trending-profile-name">Igor Carcarof</p>
+          <p className="trending-profile-tweets">11k Tweets</p>
+        </div>
+        <div className="trends-for-you-list">
+          <img className="three-dots-trends" src={threeDots} alt="" />
+          <p className="trending-in">Trending in Uruguay</p>
+          <p className="trending-profile-name">Esteban Cassiani</p>
+          <p className="trending-profile-tweets">21.9 Tweets</p>
+        </div>
+        <div className="trends-for-you-list">
+          <img className="three-dots-trends" src={threeDots} alt="" />
+          <p className="trending-in">Trending in Uruguay</p>
+          <p className="trending-profile-name">Alice Keys</p>
+          <p className="trending-profile-tweets">35.8kTweets</p>
+        </div>
+          <div className="show-more-trends-container">
+          <Link to="#" className="show-more-trends">Show more</Link>
+          </div>
       </div>
       <div className="who-to-follow-container">
         <p className="who-to-follow">Who to follow</p>
@@ -85,6 +118,9 @@ export default function RightSidebar() {
             
           );
         })}
+         <div className="show-more-trends-container">
+          <Link to="#" className="show-more-trends">Show more</Link>
+          </div>
       </div>
     </div>
   );
