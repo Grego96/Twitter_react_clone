@@ -435,7 +435,7 @@ function Login() {
                       className="register siguiente-btn register-modal"
                       onClick={() => login()}
                     >
-                      Iniciar sesión
+                      Sign in
                     </button>
                     <button className="button-prevent register olvidaste-btn register-modal">
                       Forgot password?

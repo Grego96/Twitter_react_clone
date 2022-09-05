@@ -10,10 +10,11 @@ import fullHeart from "./TweetSVG/heart-solid.svg";
 import profileDefaultImg from "../a0e243b3a508306970f49bc00.jpg";
 import "./TweetStyles.css";
 
-function Tweet({ tweet }) {
+function SelfTweetProfile({ tweet, selfUser }) {
   const token = useSelector((state) => state.token);
   const user = useSelector((state) => state.user);
   const [isLiked, setIsLiked] = useState(false);
+  console.log(selfUser);
 
   async function like(id) {
     await axios({
@@ -45,25 +46,25 @@ function Tweet({ tweet }) {
       <div className="separation">
         <div className="d-flex  w-100 bodyPrueba">
           <div className="px-1 tweetRectangle">
-            {/* {tweet.user.profileImage.includes("http") ? (
-              <img src={tweet.user.profileImage} className="profileImage" alt="Profile" />
+            {selfUser.profileImage.includes("http") ? (
+              <img src={selfUser.profileImage} className="profileImage" alt="Profile" />
             ) : (
               <img src={profileDefaultImg} className="profileImage" alt="Profile" />
-            )} */}
+            )}
 
-            <img src={tweet.user.profileImage} className="profileImage" alt="Profile" />
+            {/* <img src={selfUser.profileImage} className="profileImage" alt="Profile" /> */}
           </div>
           <div className="px-1 w-100">
             <div>
               <h6>
                 <strong>
-                  <Link className="linkStyles" to={`/profile/${tweet.user._id}`}>{`${
-                    tweet.user.firstname + " " + tweet.user.lastname
+                  <Link className="linkStyles" to={`/profile/${selfUser._id}`}>{`${
+                    selfUser.firstname + " " + selfUser.lastname
                   }`}</Link>
                 </strong>
               </h6>
-              <Link className="user linkStyles" to={`/profile/${tweet.user._id}`}>
-                @{tweet.user.username}
+              <Link className="user linkStyles" to={`/profile/${selfUser._id}`}>
+                @{selfUser.username}
               </Link>
               <p>{tweet.text}</p>
             </div>
@@ -88,4 +89,4 @@ function Tweet({ tweet }) {
   );
 }
 
-export default Tweet;
+export default SelfTweetProfile;
