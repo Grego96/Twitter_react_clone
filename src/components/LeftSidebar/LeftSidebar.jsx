@@ -95,33 +95,37 @@ export default function LeftSidebar({ userData }) {
         <button className="btn-tweet">Tweet</button>
       </div>
       <div className="logout">
-        {profileImg.includes("http") ? (
-          <img src={user.value.profileImage} className="profileImageSidebar" alt="Profile" />
-        ) : (
-          <img src={profileDefaultImg} className="profileImageSidebar" alt="Profile" />
-        )}
-        <button
+        <div
           onClick={() => {
             setShow(true);
           }}
-          className="logoutBtn"
         >
-          {user.value.username}
-        </button>
-        <img className="three-dots-logout" src={threeDots} alt="" />
-        <p className="logoutNick">@{user.value.username}</p>
-        <Modal className="modal-container" show={show} onHide={handleClose}>
-          <Modal.Header>{user.value.username}</Modal.Header>
-          <Modal.Body>
-            <button
-              onClick={() => {
-                dispatch(deleteToken());
-              }}
-            >
-              <Link to="/login">Log out</Link>{" "}
-            </button>
-          </Modal.Body>
-        </Modal>
+          {profileImg.includes("http") ? (
+            <img src={user.value.profileImage} className="profileImageSidebar" alt="Profile" />
+          ) : (
+            <img src={profileDefaultImg} className="profileImageSidebar" alt="Profile" />
+          )}
+          <button className="logoutBtn">{user.value.username}</button>
+          <img className="three-dots-logout" src={threeDots} alt="" />
+          <p className="logoutNick">@{user.value.username}</p>
+        </div>
+        
+          <Modal show={show} onHide={handleClose} >
+            <Modal.Body className="modal-container">
+              {user.value.username}
+              <button
+                className="modal-log-out"
+                onClick={() => {
+                  dispatch(deleteToken());
+                }}
+              >
+                <Link to="/login" className="modal-log-out-link">
+                  Log out
+                </Link>{" "}
+              </button>
+            </Modal.Body>
+          </Modal>
+        
       </div>
     </div>
   );
