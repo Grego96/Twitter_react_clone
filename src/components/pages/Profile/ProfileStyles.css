@@ -1,13 +1,27 @@
 .profileContainer {
   color: white;
+  font-size: 14px;
 }
 .backArrow {
   height: 15px;
   width: 15px;
 }
 
-.profileUser {
-  padding: 20px 0 0;
+.profilePics {
+  height: 330px;
+}
+
+.userNameTweets {
+  position: relative;
+  left: 20px;
+}
+.userName {
+  font-size: 19px;
+}
+
+.userProfile {
+  position: relative;
+  left: 15px;
 }
 
 .headerPic {
@@ -41,9 +55,27 @@
   left: 435px;
 }
 
+.follow-buton {
+  display: flex;
+  position: absolute;
+  left: 268px;
+  top: 19px;
+  background-color: white;
+  font-size: 0.9rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  width: 80px;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0px 18px;
+  border: 0.3px solid black;
+}
+
 .usr {
-  color: #424853;
-  font-size: 0.8rem;
+  color: #636363;
+  font-size: 12px;
   margin: 0;
 }
 
@@ -91,4 +123,8 @@ ul {
 .followersSpan {
   position: relative;
   left: 10px;
+}
+
+.selectionSection {
+  border-bottom: solid 0.2px #2f3336;
 }

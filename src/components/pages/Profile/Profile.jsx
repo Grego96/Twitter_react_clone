@@ -10,6 +10,8 @@ import "./ProfileStyles.css";
 
 function Profile() {
   const [user, setUser] = useState({});
+  // const [loggedUser, setLoggedUser] = useState({});
+  // const [ifFollow, setIfFollow] = useState(false);
   const params = useParams();
 
   const token = useSelector((state) => state.token);
@@ -25,13 +27,19 @@ function Profile() {
           },
         });
         setUser(result.data.userProfileData);
-        console.log(result);
+        // setLoggedUser(result.data.user);
+        // console.log(result.data.user._id);
+        // console.log(user._id);
       } catch (error) {
         console.log(error);
       }
     };
     getProfile();
   }, []);
+
+  // function toggleFollow() {
+  //   setIfFollow(!ifFollow);
+  // }
 
   return (
     <div className="container">
@@ -42,21 +50,24 @@ function Profile() {
 
         {/* Profile zone */}
         <div className="col-md-5 px-0 parallelLines profileContainer">
-          <div className="d-flex userProfile align-items-center">
+          <div className="d-flex userProfile align-items-center mt-1">
             <Link to="/">
               <img className="backArrow mx-2" src={backArrow} alt="arrow to go home" />
             </Link>
-            <div className="mb-2">
-              <h4>{user.firstname + " " + user.lastname} </h4>
-              <h6 className="usr"> 
-              {/* {user.tweets.length} */}
-               Tweets </h6>
+            <div className="userNameTweets">
+              <h4 className="m-0 userName">
+                <strong>{user.firstname + " " + user.lastname}</strong>
+              </h4>
+              <h6 className="usr">
+                {/* {user.tweets.length} */}
+                Tweets{" "}
+              </h6>
             </div>
           </div>
 
-          <div>
+          <div className="profilePics">
             <div className="headerPic"></div>
-            <div className="px-1">
+            <div className="px-1 ">
               {/* {user.profileImage.includes("http") ? (
             <img src={user.profileImage} className="userProfileImage" alt="Profile" />
           ) : (
@@ -64,36 +75,50 @@ function Profile() {
           )} */}
 
               <img src={user.profileImage} className="userProfileImage" alt="Profile" />
-            </div>
 
-            <div>
-              <button className=" edit-btn"> Edit profile</button>
+              <div>
+                {/* {loggedUser.data.user._id === user._id ? (
+                  <button className=" edit-btn"> Edit profile</button>
+                ) : (
+                  <button
+                    className="follow-buton"
+                    onClick={() => {
+                      // follow();
+                      toggleFollow();
+                    }}
+                  >
+                    {ifFollow ? "Unfollow" : "Follow"}
+                  </button>
+                )} */}
+
+                <button className=" edit-btn"> Edit profile</button>
+              </div>
             </div>
           </div>
 
           <div className="userInfo px-2">
-            <h4 className="profileUser">
+            <h4 className="profileUser m-0">
               <strong> {user.firstname + " " + user.lastname} </strong>
             </h4>
             <h6 className="usr"> @ {user.username} </h6>
-            <p className="my-4"> {user.description} </p>
+            <p className="my-2"> {user.description} </p>
             <h6 className="born"> Born 01 August 1962 | Joined September 1998</h6>
             <div>
               <h6>
-                <span>
+                <span className="usr">
                   {/* {user.followings.length} */}
-                  <text className="usr"> Followings </text>
+                  Followings
                 </span>
 
-                <span className="followersSpan">
+                <span className="followersSpan usr">
                   {/* {user.followers.length} */}
-                  <text className="usr"> Followers </text>
+                  Followers
                 </span>
               </h6>
             </div>
           </div>
           <div>
-            <ul className="d-flex justify-content-around p-0 m-0">
+            <ul className="d-flex justify-content-around p-0 m-0 selectionSection">
               <li className="profileList underline">
                 <span> Tweets</span>
               </li>

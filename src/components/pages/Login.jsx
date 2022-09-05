@@ -125,10 +125,10 @@ function Login() {
                   </svg>
                 </div>
                 <h1 className="main-title">
-                  Lo que está <br />
-                  pasando ahora
+                  Happening <br />
+                  now
                 </h1>
-                <h3 className="subtitle">Únete a Twitter hoy mismo.</h3>
+                <h3 className="subtitle">Join Twitter today.</h3>
                 <div className="register_buttons">
                   <button className="register register_google">
                     <span className="google-icon">
@@ -156,7 +156,7 @@ function Login() {
                         ></path>
                       </svg>
                     </span>
-                    Registrarse con Google
+                    Sign up with Google
                   </button>
                   <button className="register register_apple">
                     <span>
@@ -172,7 +172,7 @@ function Login() {
                         <path d="M 16.125 1 C 14.972 1.067 13.648328 1.7093438 12.861328 2.5273438 C 12.150328 3.2713438 11.589359 4.3763125 11.818359 5.4453125 C 13.071359 5.4783125 14.329031 4.8193281 15.082031 3.9863281 C 15.785031 3.2073281 16.318 2.12 16.125 1 z M 16.193359 5.4433594 C 14.384359 5.4433594 13.628 6.5546875 12.375 6.5546875 C 11.086 6.5546875 9.9076562 5.5136719 8.3476562 5.5136719 C 6.2256562 5.5146719 3 7.4803281 3 12.111328 C 3 16.324328 6.8176563 21 8.9726562 21 C 10.281656 21.013 10.599 20.176969 12.375 20.167969 C 14.153 20.154969 14.536656 21.011 15.847656 21 C 17.323656 20.989 18.476359 19.367031 19.318359 18.082031 C 19.922359 17.162031 20.170672 16.692344 20.638672 15.652344 C 17.165672 14.772344 16.474672 9.1716719 20.638672 8.0136719 C 19.852672 6.6726719 17.558359 5.4433594 16.193359 5.4433594 z"></path>
                       </svg>
                     </span>
-                    Registrarse con Apple
+                    Sign up with Apple
                   </button>
                   <div className="container-o">
                     <hr className="line" />
@@ -187,15 +187,15 @@ function Login() {
                     data-bs-toggle="modal"
                     data-bs-
                   >
-                    Registrate con el número de ...
+                    Sign up with a phone number or em...
                   </button>
                   <p className="termins">
-                    Al registrarte, aceptas los Términos de servicioy la Política de privacidad,
-                    incluida la política de Uso de Cookies.
+                    By signing up, you agree to the Terms of Service and Privacy Policy, including
+                    Cookie Use.
                   </p>
                 </div>
                 <div className="iniciar-sesion">
-                  <h4 className="have-account">¿Ya tienes una cuenta?</h4>
+                  <h4 className="have-account">Already have an account?</h4>
                   <button
                     onClick={() => handleShow()}
                     type="button"
@@ -203,7 +203,7 @@ function Login() {
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal1"
                   >
-                    Iniciar sesión
+                    Sign in
                   </button>
                 </div>
               </div>
@@ -241,7 +241,7 @@ function Login() {
                   <div className="elements ">
                     <div className="botones_modal">
                       <div className="div-modal-title">
-                        <h4 className="modal-title">Inicia sesión en Twitter</h4>
+                        <h4 className="modal-title">Sign in to Twitter</h4>
                       </div>
                       <button className="register register_google register-modal">
                         <span className="google-icon">
@@ -271,7 +271,7 @@ function Login() {
                             ></path>
                           </svg>
                         </span>
-                        Continuar con Google
+                        Sign in with Google
                       </button>
                       <button className="register register_apple register_apple-modal-1 register-modal">
                         <span>
@@ -287,12 +287,12 @@ function Login() {
                             <path d="M 16.125 1 C 14.972 1.067 13.648328 1.7093438 12.861328 2.5273438 C 12.150328 3.2713438 11.589359 4.3763125 11.818359 5.4453125 C 13.071359 5.4783125 14.329031 4.8193281 15.082031 3.9863281 C 15.785031 3.2073281 16.318 2.12 16.125 1 z M 16.193359 5.4433594 C 14.384359 5.4433594 13.628 6.5546875 12.375 6.5546875 C 11.086 6.5546875 9.9076562 5.5136719 8.3476562 5.5136719 C 6.2256562 5.5146719 3 7.4803281 3 12.111328 C 3 16.324328 6.8176563 21 8.9726562 21 C 10.281656 21.013 10.599 20.176969 12.375 20.167969 C 14.153 20.154969 14.536656 21.011 15.847656 21 C 17.323656 20.989 18.476359 19.367031 19.318359 18.082031 C 19.922359 17.162031 20.170672 16.692344 20.638672 15.652344 C 17.165672 14.772344 16.474672 9.1716719 20.638672 8.0136719 C 19.852672 6.6726719 17.558359 5.4433594 16.193359 5.4433594 z"></path>
                           </svg>
                         </span>
-                        Continuar con Apple
+                        Sign in with Apple
                       </button>
                       <div>
                         <div className="container-o container-o-modal-1">
                           <hr className="line" />
-                          <p className="o">o</p>
+                          <p className="o">or</p>
                           <hr className="line" />
                         </div>
                       </div>
@@ -300,7 +300,7 @@ function Login() {
                         <input
                           className="input-email input-email-modal-1"
                           type="text"
-                          placeholder="Correo electrónico o nombre de usuario"
+                          placeholder="Phone, email address, or username"
                           name="user"
                           onChange={(e) => setuserNameToLogin(e.target.value)}
                         />
@@ -313,20 +313,20 @@ function Login() {
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal2"
                         >
-                          Siguiente
+                          Next
                         </button>
                         <button className="button-prevent register olvidaste-btn register-modal">
-                          ¿Olvidaste tu contraseña?
+                          Forgot password?
                         </button>
                         <p>
-                          ¿No tienes una cuenta?
+                          Don't have an account?
                           <Link
                             onClick={() => handleShow3()}
                             to=""
                             data-bs-toggle="modal"
                             data-bs-target="#exampleModal3"
                           >
-                            Regístrate
+                            Sign up
                           </Link>
                         </p>
                       </div>
@@ -363,7 +363,7 @@ function Login() {
               <div className="contenido-modal h-100 d-flex flex-column justify-content-between">
                 <div className="elements-modal2 h-100">
                   <div className="div-modal-title">
-                    <h4 className="modal-title">Inicia sesión en Twitter</h4>
+                    <h4 className="modal-title">Sign in to Twitter</h4>
                   </div>
                   <div className="login-login-message">
                     <p>{loginMessage.message}</p>
@@ -396,7 +396,7 @@ function Login() {
                         ></path>
                       </svg>
                     </span>
-                    Continuar con Google
+                    Sign in with Google
                   </button>
                   <button className="register register_apple register-modal">
                     <span>
@@ -412,22 +412,22 @@ function Login() {
                         <path d="M 16.125 1 C 14.972 1.067 13.648328 1.7093438 12.861328 2.5273438 C 12.150328 3.2713438 11.589359 4.3763125 11.818359 5.4453125 C 13.071359 5.4783125 14.329031 4.8193281 15.082031 3.9863281 C 15.785031 3.2073281 16.318 2.12 16.125 1 z M 16.193359 5.4433594 C 14.384359 5.4433594 13.628 6.5546875 12.375 6.5546875 C 11.086 6.5546875 9.9076562 5.5136719 8.3476562 5.5136719 C 6.2256562 5.5146719 3 7.4803281 3 12.111328 C 3 16.324328 6.8176563 21 8.9726562 21 C 10.281656 21.013 10.599 20.176969 12.375 20.167969 C 14.153 20.154969 14.536656 21.011 15.847656 21 C 17.323656 20.989 18.476359 19.367031 19.318359 18.082031 C 19.922359 17.162031 20.170672 16.692344 20.638672 15.652344 C 17.165672 14.772344 16.474672 9.1716719 20.638672 8.0136719 C 19.852672 6.6726719 17.558359 5.4433594 16.193359 5.4433594 z"></path>
                       </svg>
                     </span>
-                    Continuar con Apple
+                    Sign in with Apple
                   </button>
                   <div>
                     <div className="container-o container-o-modal-1">
                       <hr className="line" />
-                      <p className="o">o</p>
+                      <p className="o">or</p>
                       <hr className="line" />
                     </div>
                   </div>
 
-                  <h4 className="nameUser">Inicia sesión como: {userNameToLogin}</h4>
+                  <h4 className="nameUser">Sign in as: {userNameToLogin}</h4>
                   <div className="siguiente">
                     <input
                       className="input-email input-modal-2"
                       type="password"
-                      placeholder="Ingresar contraseña"
+                      placeholder="Enter your password"
                       onChange={(e) => setpasswordLogin(e.target.value)}
                     />
                     <button
@@ -438,10 +438,10 @@ function Login() {
                       Iniciar sesión
                     </button>
                     <button className="button-prevent register olvidaste-btn register-modal">
-                      ¿Olvidaste tu contraseña?
+                      Forgot password?
                     </button>
                     <p>
-                      ¿No tienes una cuenta?
+                      Don't have an account?
                       <Link
                         to="#"
                         onClick={() => {
@@ -450,7 +450,7 @@ function Login() {
                           handleShow3();
                         }}
                       >
-                        Regístrate
+                        Sign up
                       </Link>
                     </p>
                   </div>
@@ -474,72 +474,72 @@ function Login() {
                 ></button>
               </div>
               <div className="contenido-modal modal-3">
-                <h1>Cree su cuenta</h1>
+                <h1>Create your account</h1>
                 <div className="errorMessage">
                   <p>{registerMessage.message}</p>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="firstname" className="form-label">
-                    Nombre
+                    Name
                   </label>
                   <input
                     type="text"
                     className="form-control"
                     name="firstname"
                     id="firstname"
-                    placeholder="Ingrese su nombre..."
+                    placeholder="Name..."
                     onChange={(e) => setfirstName(e.target.value)}
                   />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="lastname" className="form-label">
-                    Apellido
+                    Lastname
                   </label>
                   <input
                     type="text"
                     className="form-control"
                     name="lastname"
                     id="lastname"
-                    placeholder="Ingrese su apellido..."
+                    placeholder="Lastname..."
                     onChange={(e) => setLastname(e.target.value)}
                   />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
-                    Correo elecrónico
+                    Email
                   </label>
                   <input
                     type="email"
                     className="form-control"
                     id="email"
                     name="email"
-                    placeholder="Ingrese su correo electrónico..."
+                    placeholder="Email..."
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="username" className="form-label">
-                    Usuario
+                    Username
                   </label>
                   <input
                     type="text"
                     className="form-control"
                     name="username"
                     id="username"
-                    placeholder="Ingrese su usuario..."
+                    placeholder="Username..."
                     onChange={(e) => setUsername(e.target.value)}
                   />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">
-                    Contraseña
+                    Password
                   </label>
                   <input
                     type="password"
                     className="form-control"
                     name="password"
                     id="password"
-                    placeholder="Ingrese su contraseña..."
+                    placeholder="Password..."
                     onChange={(e) => setpassword(e.target.value)}
                   />
                 </div>
@@ -549,7 +549,7 @@ function Login() {
                     register();
                   }}
                 >
-                  Registrarse
+                  Register
                 </button>
               </div>
             </div>
@@ -558,23 +558,23 @@ function Login() {
       </Modal>
 
       <footer>
-        <p className="item-footer">Información</p>
-        <p className="item-footer">Centro de Ayuda</p>
-        <p className="item-footer">Condiciones de Servicio</p>
-        <p className="item-footer">Política de Privacidad</p>
-        <p className="item-footer">Política de cookies</p>
-        <p className="item-footer">Accesibilidad</p>
-        <p className="item-footer">Información de anuncios</p>
+        <p className="item-footer">About</p>
+        <p className="item-footer">Help Center</p>
+        <p className="item-footer">Terms of Service</p>
+        <p className="item-footer">Privacy Policy</p>
+        <p className="item-footer">Cookie Policy</p>
+        <p className="item-footer">Accessibility</p>
+        <p className="item-footer">Ads info</p>
         <p className="item-footer">Blog</p>
-        <p className="item-footer">Estado</p>
-        <p className="item-footer">Empleos</p>
-        <p className="item-footer">Recursos para marcas</p>
-        <p className="item-footer">Publicidad</p>
+        <p className="item-footer">Status</p>
+        <p className="item-footer">Careers</p>
+        <p className="item-footer">Brand Resources</p>
+        <p className="item-footer">Advertising</p>
         <p className="item-footer">Marketing</p>
-        <p className="item-footer">Twitter para empresas</p>
-        <p className="item-footer">Desarrolladores</p>
-        <p className="item-footer">Guía</p>
-        <p className="item-footer">Configuración</p>
+        <p className="item-footer">Twitter for Buisness</p>
+        <p className="item-footer">Developers</p>
+        <p className="item-footer">Directory</p>
+        <p className="item-footer">Settings</p>
         <p className="item-footer">© 2022 Twitter, Inc.</p>
       </footer>
     </div>
