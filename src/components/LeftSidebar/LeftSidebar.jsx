@@ -28,6 +28,7 @@ export default function LeftSidebar({ userData }) {
 
   return (
     <div className="sidebar-container">
+      <div className="d-flex flex-column">
       <Link to="/">
         <img className="twitter-icon" src={twitter_logo} alt="" />
       </Link>
@@ -86,11 +87,12 @@ export default function LeftSidebar({ userData }) {
         </span>
       </Link>
       <button className="btn-tweet">Tweet</button>
+      </div>
       <div className="logout">
         {profileImg.includes("http") ? (
-          <img src={user.value.profileImage} className="profileImage" alt="Profile" />
+          <img src={user.value.profileImage} className="profileImageSidebar" alt="Profile" />
         ) : (
-          <img src={profileDefaultImg} className="profileImage" alt="Profile" />
+          <img src={profileDefaultImg} className="profileImageSidebar" alt="Profile" />
         )}
         <button className="logoutBtn">{user.value.username}</button>
         <img className="three-dots-logout" src={threeDots} alt="" />

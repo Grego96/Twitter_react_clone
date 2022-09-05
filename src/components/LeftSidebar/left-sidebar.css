@@ -9,6 +9,7 @@
   flex-direction: column;
   height: 100vh;
   position: fixed;
+  justify-content: space-between;
 }
 
 .twitter-icon {
@@ -208,7 +209,7 @@
   height: 63px;
   border-radius: 50px;
   position: relative;
-  top: 31.5%;
+  bottom: 12px;
   cursor: pointer;
 }
 
@@ -236,10 +237,10 @@
   color: #63686d;
 }
 
-.profile-icon-logout {
+.profileImageSidebar {
   position: relative;
   left: 12px;
-  top: 6px;
+  top: 7px;
   border-radius: 50px;
   width: 45px;
   z-index: 2;
