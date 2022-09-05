@@ -13,27 +13,43 @@ export default function RightSidebar() {
   const token = useSelector((state) => state.token);
   const [randomUsers, setRandomUsers] = useState([]);
 
-  useEffect(() => {
-    async function getTweets() {
-      try {
-        const result = await axios({
-          method: "get",
-          baseURL: `http://localhost:${process.env.REACT_APP_API_PORT}/users/randomUnfollowers`,
-          headers: {
-            Authorization: `Bearer ${token.value}`,
-          },
-          params: {
-            number: 5,
-          },
-        });
-        console.log(result.data.randomsUnfollowers);
-        setRandomUsers(result.data.randomsUnfollowers);
-      } catch (error) {
-        console.log(error);
-      }
+  async function randomsUnfollowers() {
+    try {
+      const result = await axios({
+        method: "get",
+        baseURL: `http://localhost:${process.env.REACT_APP_API_PORT}/users/randomUnfollowers`,
+        headers: {
+          Authorization: `Bearer ${token.value}`,
+        },
+        params: {
+          number: 5,
+        },
+      });
+      console.log(result.data.randomsUnfollowers);
+      setRandomUsers(result.data.randomsUnfollowers);
+    } catch (error) {
+      console.log(error);
     }
-    getTweets();
+  }
+
+  useEffect(() => {
+    randomsUnfollowers();
   }, []);
+
+  async function follow(id) {
+    try {
+      const result = await axios({
+        method: "patch",
+        baseURL: `http://localhost:${process.env.REACT_APP_API_PORT}/users/${id}/follow`,
+        headers: {
+          Authorization: `Bearer ${token.value}`,
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
 
   return (
     <div className="px-4">
@@ -79,7 +95,9 @@ export default function RightSidebar() {
         {randomUsers.map((randomUser) => {
           return (
             <div className="d-flex profile-container">
-              <button className="follow-buton">Follow</button>
+              <button className="follow-buton" onClick={() => {
+                follow(randomUser._id)
+                }}>Follow</button>
               <img className="img-who-to-follow" src={randomUser.profileImage} alt="" />
               <Link className="profile-nick" to="#">
                 {randomUser.username}

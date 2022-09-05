@@ -15,6 +15,7 @@ import "./left-sidebar.css";
 
 export default function LeftSidebar() {
   const user = useSelector((state) => state.user)
+
   return (
     <div className="sidebar-container">
       <Link to="/">
@@ -58,7 +59,7 @@ export default function LeftSidebar() {
         Lists
         </span>
       </Link>
-      <Link to={`/user/${user.value._id}`} className="profile">
+      <Link to={`/users/${user.value._id}`} className="profile">
         <span className="sidebar-left-links">
         <img className="profile-icon" src={profile} alt="" />
         Profile

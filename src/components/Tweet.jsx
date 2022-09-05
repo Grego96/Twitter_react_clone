@@ -11,7 +11,8 @@ import "./TweetStyles.css";
 
 function Tweet({ tweet }) {
   const token = useSelector((state) => state.token);
-  const [isLiked, setIsLiked] = useState(false)
+  const user = useSelector((state) => state.user);
+  const [isLiked, setIsLiked] = useState(false);
 
   async function like(id) {
     await axios({
@@ -23,15 +24,20 @@ function Tweet({ tweet }) {
     });
   }
 
-  // useEffect(() => {
-  //   const isLiked = tweet.likes.some((userId) => {
-  //     console.log(userId);
-  //     console.log(userData.id);
-  //    return userId === userData.id
-  //   })
-  //   console.log(isLiked);
-  //   setIsLiked(isLiked)
-  // },[])
+  function isTweetLiked() {
+    const isLiked = tweet.likes.some((userId) => {
+      return userId === user.value._id;
+    });
+    setIsLiked(isLiked);
+  }
+
+  function toggleLike() {
+    setIsLiked(!isLiked);
+  }
+
+  useEffect(() => {
+    isTweetLiked();
+  }, []);
 
   return (
     <div className="horizontalLines">
@@ -70,9 +76,10 @@ function Tweet({ tweet }) {
 
           <img
             onClick={() => {
-              like(tweet._id)
+              like(tweet._id);
+              toggleLike();
             }}
-            src={ isLiked ? fullHeart : heart }
+            src={isLiked ? fullHeart : heart}
             alt="Heart icon"
             className="tweet-icons"
           />
