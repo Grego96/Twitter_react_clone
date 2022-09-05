@@ -14,7 +14,6 @@ function SelfTweetProfile({ tweet, selfUser }) {
   const token = useSelector((state) => state.token);
   const user = useSelector((state) => state.user);
   const [isLiked, setIsLiked] = useState(false);
-  console.log(selfUser);
 
   async function like(id) {
     await axios({

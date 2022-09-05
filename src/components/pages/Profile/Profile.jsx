@@ -5,9 +5,10 @@ import { Link, useParams } from "react-router-dom";
 import LeftSidebar from "../../LeftSidebar/LeftSidebar";
 import RightSidebar from "../../RightSidebar/RightSidebar";
 import backArrow from "./svg/arrow-left-solid.svg";
-import Tweet from "../../Tweet";
-import "./ProfileStyles.css";
 import SelfTweetProfile from "../../SelfTweetsProfile";
+import profileDefaultImg from "../../../a0e243b3a508306970f49bc00.jpg";
+
+import "./ProfileStyles.css";
 
 function Profile() {
   const [user, setUser] = useState(null);
@@ -58,10 +59,7 @@ function Profile() {
                 <h4 className="m-0 userName">
                   <strong>{user.firstname + " " + user.lastname}</strong>
                 </h4>
-                <h6 className="usr">
-                  {user.tweets.length}
-                  Tweets{" "}
-                </h6>
+                <h6 className="usr">{user.tweets.length} Tweets </h6>
               </div>
             </div>
 
@@ -71,11 +69,7 @@ function Profile() {
                 {user.profileImage.includes("http") ? (
                   <img src={user.profileImage} className="userProfileImage" alt="Profile" />
                 ) : (
-                  <img
-                    src={`./img/${user.profileImage}`}
-                    className="userProfileImage"
-                    alt="Profile"
-                  />
+                  <img src={profileDefaultImg} className="userProfileImage" alt="Profile" />
                 )}
 
                 {/* <img src={user.profileImage} className="userProfileImage" alt="Profile" /> */}
